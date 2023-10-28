@@ -1,0 +1,21 @@
+button {
+  font-weight: 500;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0;
+  cursor: pointer;
+  background-color: #fff;
+  color: #303030;
+  transition: background-color 0.1s;
+  user-select: none;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #005190;
+}
+
+button:active {
+  background-color: #024374;
+}

@@ -1,0 +1,23 @@
+.number-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+}
+
+.number-view__value {
+  display: inline-block;
+  min-width: 2rem;
+  text-align: center;
+  margin: 0 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.number-view__value__negative {
+  color: #f44336;
+}
+
+.number-view__value__positive {
+  color: #51d569;
+}
