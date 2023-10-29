@@ -1,12 +1,12 @@
 export class NumberController {
-  __model;
-  __view;
+  #model;
+  #view;
 
   constructor(model, view) {
-    this.__model = model;
-    this.__view = view;
-    this.__model.registerOnChangeCallback((value) =>
-      this.__view.updateRender(value)
+    this.#model = model;
+    this.#view = view;
+    this.#model.registerOnChangeCallback((value) =>
+      this.#view.updateRender(value)
     );
   }
 }

@@ -1,10 +1,10 @@
 export class NumberView {
   ref;
-  __model;
+  #model;
 
   constructor(ref, model) {
     this.ref = ref;
-    this.__model = model;
+    this.#model = model;
     this.__render();
   }
 
@@ -12,8 +12,8 @@ export class NumberView {
     this.ref.innerHTML = `
       <div class="number-view">
         <button class="number-view__decrement">- Decrement</button>
-        <div class="${this.__getValueStyle()}">
-            ${this.__model.value}
+        <div class="${this.#getValueStyle()}">
+            ${this.#model.value}
         </div>
         <button class="number-view__increment">+ Increment</button>
       </div>
@@ -21,27 +21,27 @@ export class NumberView {
 
     this.ref
       .querySelector('.number-view__decrement')
-      .addEventListener('click', () => this.__model.decrement());
+      .addEventListener('click', () => this.#model.decrement());
 
     this.ref
       .querySelector('.number-view__increment')
-      .addEventListener('click', () => this.__model.increment());
+      .addEventListener('click', () => this.#model.increment());
   }
 
   updateRender(value) {
     const valueRef = this.ref.querySelector('.number-view__value');
     valueRef.innerText = value;
-    valueRef.setAttribute('class', this.__getValueStyle());
+    valueRef.setAttribute('class', this.#getValueStyle());
   }
 
-  __getValueStyle() {
-    const modifier = this.__getValueStyleModifier();
+  #getValueStyle() {
+    const modifier = this.#getValueStyleModifier();
     return `number-view__value number-view__value__${modifier}`;
   }
 
-  __getValueStyleModifier() {
-    if (this.__model.value > 0) return 'positive';
-    if (this.__model.value < 0) return 'negative';
+  #getValueStyleModifier() {
+    if (this.#model.value > 0) return 'positive';
+    if (this.#model.value < 0) return 'negative';
     return 'neutral';
   }
 }

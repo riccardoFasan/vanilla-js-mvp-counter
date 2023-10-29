@@ -1,26 +1,26 @@
 export class NumberModel {
-  __value;
-  __callback;
+  #value;
+  #callback;
 
   constructor(value) {
-    this.__value = value;
+    this.#value = value;
   }
 
   get value() {
-    return this.__value;
+    return this.#value;
   }
 
   increment() {
-    this.__value += 1;
-    this.__callback(this.__value);
+    this.#value += 1;
+    this.#callback(this.#value);
   }
 
   decrement() {
-    this.__value -= 1;
-    this.__callback(this.__value);
+    this.#value -= 1;
+    this.#callback(this.#value);
   }
 
   registerOnChangeCallback(callback) {
-    this.__callback = callback;
+    this.#callback = callback;
   }
 }
